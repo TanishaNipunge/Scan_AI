@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import "pages/home_page.dart";
-
+import 'components/about.dart';
+import "components/footer.dart";
 void main() {
   runApp(const MyApp());
 }
@@ -26,8 +27,16 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: HomePage(),
+    return Scaffold(
+      body: SingleChildScrollView( // 👈 important for scrolling
+        child: Column(
+          children: const [
+            HomePage(),
+            aboutsection(),
+            footer(), // 👈 added footer here
+          ],
+        ),
+      ),
     );
   }
 }
