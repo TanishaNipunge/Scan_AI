@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scan_ai/components/download.dart';
 import 'package:scan_ai/components/service.dart';
 import '../components/herosection.dart';
 import '../components/header.dart';
@@ -13,11 +14,8 @@ class HomePage extends StatelessWidget {
         children: [
           header(),
           herosection(),
+          downloadsection(),
           services(),
-          SizedBox(height: 50),
-          Text("Hero Section"),
-          SizedBox(height: 50),
-          Text("Features Section"),
         ],
       ),
     );

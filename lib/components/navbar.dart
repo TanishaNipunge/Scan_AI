@@ -11,11 +11,15 @@ class navbar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          _navItem("Home"),
+          const SizedBox(width: 30),
           _navItem("About us"),
           const SizedBox(width: 30),
-          _navItem("Solutions"),
+          _navItem("Download"),
           const SizedBox(width: 30),
           _navItem("Contact Us"),
+          const SizedBox(width: 30),
+          _navItem("Contact us"),
         ],
       ),
     );

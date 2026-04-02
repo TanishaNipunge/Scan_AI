@@ -7,7 +7,7 @@ class herosection extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       // ✅ Reduced height (responsive)
-      height: MediaQuery.of(context).size.height * 0.7,
+      height: MediaQuery.of(context).size.height * 0.8,
 
       child: Stack(
         children: [
