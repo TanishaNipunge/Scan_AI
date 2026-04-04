@@ -25,7 +25,7 @@ class aboutsection extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               const Text(
-                "A Great Place to Receive Care",
+                "Advanced Healthcare Made Accessible",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 28,
@@ -35,9 +35,21 @@ class aboutsection extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               const Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                "Quisque placerat scelerisque tortor ornare ornare. "
-                "Convallis felis vitae tortor augue. Velit nascetur proin massa in.",
+                "ScanAI is dedicated to delivering advanced and reliable medical diagnostic solutions. "
+                "We provide portable X-ray systems and ECG devices designed for hospitals, clinics, "
+                "and home healthcare. Our solutions combine mobility, accuracy, and modern technology "
+                "to enable faster and smarter medical decisions.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey,
+                  height: 1.5,
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                "From high-quality digital imaging to continuous heart monitoring, we ensure our "
+                "products meet global standards while remaining affordable and easy to use.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16,
@@ -75,16 +87,14 @@ class aboutsection extends StatelessWidget {
           ),
         ),
 
-        // Bottom Image (full width)
-        SizedBox(
-          width: double.infinity,
+       SizedBox(
+          width: 800 ,
+          height: 200, // control height here
           child: Image.asset(
-            "assets/bg4.jpg", // make sure this exists in assets
-             width: 400, // full width
-              height: 300,            // fix height
-              //fit: BoxFit.cover,      // fill container and crop excess
+            "assets/bg4.jpg",
+            fit: BoxFit.cover, // fills width & crops nicely
           ),
-        ),
+         ),
       ],
     );
   }

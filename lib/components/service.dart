@@ -36,9 +36,10 @@ class services extends StatelessWidget {
             ),
             const SizedBox(height: 40),
 
-            // Main Grid
+            // Responsive Layout
             LayoutBuilder(builder: (context, constraints) {
               bool isMobile = constraints.maxWidth < 800;
+
               return isMobile
                   ? Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,9 +58,9 @@ class services extends StatelessWidget {
   }
 
   List<Widget> _buildContent(BuildContext context, bool isMobile) {
-    // Left Side Menu
+    // LEFT MENU
     Widget leftMenu = Container(
-      width: 200,
+      width: 220,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -67,29 +68,32 @@ class services extends StatelessWidget {
           BoxShadow(
             color: Colors.black12,
             blurRadius: 8,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
       child: Column(
         children: [
-          _menuItem("Free Checkup"),
-          _menuItem("Cardiogram", bgColor: Colors.blue[900], textColor: Colors.white),
-          _menuItem("X-Ray"),
-          _menuItem("Breast Cancer"),
-          _menuItem("View All", bgColor: Colors.blue[900], textColor: Colors.white),
+          _menuItem("Free Health Checkup"),
+          _menuItem("Cardiology",
+              bgColor: Colors.blue[900], textColor: Colors.white),
+          _menuItem("Radiology (X-Ray & MRI)"),
+          _menuItem("Breast Cancer Screening"),
+          _menuItem("View All Services",
+              bgColor: Colors.blue[900], textColor: Colors.white),
         ],
       ),
     );
 
-    // Middle Content
+    // MIDDLE CONTENT
     Widget middleContent = Expanded(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: isMobile ? 0 : 20, vertical: 10),
+        padding: EdgeInsets.symmetric(
+            horizontal: isMobile ? 0 : 20, vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "A passion for putting patients first.",
               style: TextStyle(
                 fontSize: 22,
@@ -97,60 +101,73 @@ class services extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
+
+            // Features List
             Wrap(
-              spacing: 10,
+              spacing: 12,
               runSpacing: 10,
               children: [
-                "A Passion for Healing",
-                "5-Star Care",
-                "All our best",
-                "Believe in Us",
-                "A Legacy of Excellence",
-                "Always Caring"
+                "Advanced Medical Technology",
+                "Experienced Doctors",
+                "24/7 Emergency Support",
+                "Personalized Treatment Plans",
+                "Affordable Healthcare",
+                "Patient-Centered Care"
               ]
-                  .map((item) => Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Container(
-                            width: 8,
-                            height: 8,
-                            decoration: BoxDecoration(
-                              color: Colors.blue[500],
-                              shape: BoxShape.circle,
-                            ),
-                          ),
-                          const SizedBox(width: 6),
-                          Text(item, style: TextStyle(color: Colors.grey[700])),
-                        ],
-                      ))
+                  .map(
+                    (item) => Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.check_circle,
+                            color: Colors.blue[500], size: 16),
+                        const SizedBox(width: 6),
+                        Text(item,
+                            style: TextStyle(color: Colors.grey[700])),
+                      ],
+                    ),
+                  )
                   .toList(),
             ),
+
             const SizedBox(height: 16),
-            Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Convallis felis vitae tortor augue.",
-              style: TextStyle(color: Colors.grey[600]),
+
+            const Text(
+              "We are committed to delivering high-quality healthcare services with compassion and care. Our team of experienced professionals ensures that every patient receives the best possible treatment using modern medical technologies.",
+              style: TextStyle(color: Colors.grey),
             ),
+
             const SizedBox(height: 8),
-            Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare.",
-              style: TextStyle(color: Colors.grey[600]),
+
+            const Text(
+              "From routine checkups to advanced diagnostics and specialized treatments, we prioritize your health and well-being at every step.",
+              style: TextStyle(color: Colors.grey),
             ),
           ],
         ),
       ),
     );
 
-    // Right Images
+    // RIGHT IMAGES
     Widget rightImages = Column(
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(16),
-          child: Image.asset("assets/service1.jpg", width: 200, height: 150, fit: BoxFit.cover),
+          child: Image.asset(
+            "assets/service1.jpg",
+            width: 220,
+            height: 150,
+            fit: BoxFit.cover,
+          ),
         ),
         const SizedBox(height: 16),
         ClipRRect(
           borderRadius: BorderRadius.circular(16),
-          child: Image.asset("assets/service2.jpg", width: 200, height: 150, fit: BoxFit.cover),
+          child: Image.asset(
+            "assets/service2.jpg",
+            width: 220,
+            height: 150,
+            fit: BoxFit.cover,
+          ),
         ),
       ],
     );

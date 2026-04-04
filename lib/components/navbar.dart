@@ -17,7 +17,7 @@ class navbar extends StatelessWidget {
           const SizedBox(width: 30),
           _navItem("Download"),
           const SizedBox(width: 30),
-          _navItem("Contact Us"),
+          _navItem("Product"),
           const SizedBox(width: 30),
           _navItem("Contact us"),
         ],
